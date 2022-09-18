@@ -19,7 +19,7 @@ export class AdminGuard implements CanActivate {
         return false;
       }
       const decodedToken = this.jwtHelper.decodeToken(token);
-      if (decodedToken.profileType && decodedToken.profileType != 'admin') {
+      if (decodedToken.profiles && decodedToken.profiles != 'admin') {
         this.router.navigate(['home']);
         return false;
       } else {

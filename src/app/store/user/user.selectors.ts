@@ -17,14 +17,14 @@ export const selectUsername = createSelector(
   (state) => state.username
 );
 
-export const selectProfileType = createSelector(
+export const selectProfiles = createSelector(
   selectUserState,
-  (state) => state.profileType
+  (state) => state.profiles
 );
 
 export const selectUserData = createSelector(
   selectUsername,
-  selectProfileType,
+  selectProfiles,
   selectID,
   (
     username: string | null,

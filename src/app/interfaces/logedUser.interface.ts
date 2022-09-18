@@ -4,5 +4,5 @@ export interface LogedUser {
   id: number;
   username: string;
   access_token: string;
-  profileType: profiles;
+  profiles: profiles;
 }

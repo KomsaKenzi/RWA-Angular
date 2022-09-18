@@ -1,5 +1,5 @@
 import { LogedUser } from '../interfaces/logedUser.interface';
-import {  UserReducer } from './user/user.reducer';
+import { UserReducer } from './user/user.reducer';
 
 export interface AppState {
   auth: LogedUser;

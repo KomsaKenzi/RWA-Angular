@@ -4,5 +4,5 @@ export interface UserState {
   id: number | null;
   username: string | null;
   access_token: string | null;
-  profileType: profiles | null;
+  profiles: profiles | null;
 }

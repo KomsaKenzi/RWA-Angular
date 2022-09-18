@@ -9,7 +9,7 @@ declare var bootbox: any;
 export const initialUserState: UserState = {
   id: null,
   username: null,
-  profileType: null,
+  profiles: null,
   access_token: null,
 };
 
@@ -21,7 +21,7 @@ const _userReducer = createReducer(
       id: userData.id,
       username: userData.username,
       access_token: userData.access_token,
-      profileType: userData.profileType,
+      profiles: userData.profiles,
     };
   }),
 
@@ -30,7 +30,7 @@ const _userReducer = createReducer(
       id: userData.id,
       username: userData.username,
       access_token: userData.access_token,
-      profileType: userData.profileType,
+      profiles: userData.profiles,
     };
   }),
 
@@ -39,7 +39,7 @@ const _userReducer = createReducer(
       id: null,
       username: null,
       access_token: null,
-      profileType: null,
+      profiles: null,
     };
   }),
 
@@ -48,7 +48,7 @@ const _userReducer = createReducer(
       id: null,
       username: null,
       access_token: null,
-      profileType: null,
+      profiles: null,
     };
   })
 );
