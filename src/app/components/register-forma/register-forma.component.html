@@ -1,1 +1,26 @@
-<p>register-forma works!</p>
+<div class="registerContainer">
+    <label class="title">Register on Medieval Strike!!</label>
+    <div class="form">
+        <div class="formColumn">
+            <mat-form-field class="formRow">
+                <input matNativeControl type="text" placeholder="Username" #username
+                    (input)="setUsername(username.value)" />
+            </mat-form-field>
+            <mat-form-field class="formRow">
+                <input matNativeControl type="email" placeholder="Email" #email (input)="setEmail(email.value)" />
+            </mat-form-field>
+        </div>
+        <div class="formColumn">
+            <mat-form-field class="formRow">
+                <input matNativeControl type="password" placeholder="Password" #password
+                    (input)="setPassword(password.value)" />
+            </mat-form-field>
+            <mat-form-field class="formRow">
+                <input matNativeControl type="password" placeholder="Confirm your password" #confirmPassword
+                    (input)="setConfirmedPassword(confirmPassword.value)" />
+            </mat-form-field>
+        </div>
+    </div>
+    <button mat-raised-button class="registerButton" (click)="register()">Sign up</button>
+    <label class="loginMessage" (click)="login()">Already a member? Log in here!</label>
+</div>
