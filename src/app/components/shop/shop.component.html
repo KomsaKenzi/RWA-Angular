@@ -1,1 +1,15 @@
-<p>shop works!</p>
+
+    <button mat-raised-button class="createCardButton" (click)="createCard()" #createCardButton>Create card</button>
+    <button mat-raised-button class="addCardToShopButton" (click)="addCardToShop()" #addCardToShopButton>Add card to shop</button>
+
+<mat-card>
+    <div *ngFor="let shop of shopsForDisplay" >
+        <app-cards-display [card]="shop.card"></app-cards-display>
+        <div>{{shop.price}}</div>
+        <div>{{shop.text}}</div>
+        <button mat-raised-button class="addCardButton" (click)="buyCard()" #buyCardButton>Buy Card</button>
+        <button mat-raised-button class="addCardButton" (click)="deleteCard(shop)" #deleteCardButton>DeleteCard</button>
+        <button mat-raised-button class="addCardButton" (click)="editCard(shop)" #editCardButton>Edit Card</button>
+
+    </div>
+</mat-card>

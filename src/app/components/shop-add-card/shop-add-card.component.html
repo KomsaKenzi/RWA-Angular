@@ -1,0 +1,21 @@
+<div class="cardsCreate">
+    <label class="title">Add card</label>
+    <mat-form-field class="loginRow">
+        <input matNativeControl type="text" placeholder="Price" name="price" #price
+            (input)="setPrice(price.value)" />
+    </mat-form-field>
+    <mat-form-field class="loginRow">
+        <input matNativeControl type="text" placeholder="Text" name="text"
+            (input)="setText(text.value)" #text />
+    </mat-form-field>
+    <div class="cardDiv">
+        <select mat-form-field id="card" class="cardSelect" #card
+            (change)="setCard(card.options[card.selectedIndex].value)">
+            <option value="none" selected disabled hidden>Select a card</option>
+            <option *ngFor="let card of showCards" value="{{card.id}}">{{card.name}}</option>
+        </select>
+    </div>
+    <label class="errorMessage" id="errorMessage">Invalid email and/or password!</label>
+    <button mat-raised-button class="createShop" (click)="createShopCard()" #loginButton>Add card</button>
+    <button mat-raised-button class="backButton" (click)="backButton()">See shop</button>
+</div>

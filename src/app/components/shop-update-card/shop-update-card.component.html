@@ -1,0 +1,14 @@
+<div class="cardsCreate">
+    <label class="title">update card in shop</label>
+    <mat-form-field class="loginRow">
+        <input matNativeControl type="text" value="{{shop?.price}}" name="price" #price
+            (input)="setPrice(price.value)" />
+    </mat-form-field>
+    <mat-form-field class="loginRow">
+        <input matNativeControl type="text" value="{{shop?.text}}" name="text"
+            (input)="setText(text.value)" #text />
+    </mat-form-field>
+    <label class="errorMessage" id="errorMessage">Invalid email and/or password!</label>
+    <button mat-raised-button class="createCardButton" (click)="updateShop()" #loginButton>Update card</button>
+    <button mat-raised-button class="backButton" (click)="backButton()">See all cards</button>
+</div>
