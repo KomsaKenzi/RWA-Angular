@@ -1,0 +1,22 @@
+<div class="cardsCreate">
+    <label class="title">Create card</label>
+    <mat-form-field class="loginRow">
+        <input matNativeControl type="text" placeholder="Name" name="name" #name
+            (input)="setName(name.value)" />
+    </mat-form-field>
+    <mat-form-field class="loginRow">
+        <input matNativeControl type="attack" placeholder="Attack" name="attack"
+            (input)="setAttack(attack.value)" #attack />
+    </mat-form-field>
+    <mat-form-field class="loginRow">
+        <input matNativeControl type="defence" placeholder="Defence" name="defence"
+            (input)="setDefence(defence.value)" #defence />
+    </mat-form-field>
+    <mat-form-field class="loginRow">
+        <input matNativeControl type="description" placeholder="Description" name="description"
+            (input)="setDescription(description.value)" #description />
+    </mat-form-field>
+    <label class="errorMessage" id="errorMessage">Invalid email and/or password!</label>
+    <button mat-raised-button class="createCardButton" (click)="createCard()" #loginButton>Log in</button>
+    <button mat-raised-button class="backButton" (click)="backButton()">See all cards</button>
+</div>
