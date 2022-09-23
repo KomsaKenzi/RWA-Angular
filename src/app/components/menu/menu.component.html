@@ -1,0 +1,28 @@
+<mat-toolbar class="menu-main">
+    <span id="menu" class="menu">
+        <button [matMenuTriggerFor]="menu" mat-icon-button class="header-icon">
+            <mat-icon style="color: azure;">menu</mat-icon>
+        </button>
+        <mat-menu class="menu" #menu="matMenu">
+            <button mat-menu-item class="menuButton" (click)="goToHome()">
+                Home
+            </button>
+            <button mat-menu-item class="menuButton" (click)="gotoShop()">
+                Shop
+            </button>
+            <button mat-menu-item class="menuButton" (click)="gotoDeck()">
+                Deck
+            </button>
+            <button mat-menu-item class="menuButton" (click)="gotoBattle()">
+                Battle
+            </button>
+        </mat-menu>
+    </span>
+    <span id="menu2" class="menu2">
+        <label>Balance: {{balance}}</label>
+        <button class="logoutButton" mat-raised-button (click)="logout()">Log out</button>   
+    </span>
+</mat-toolbar>
+
+
+<router-outlet></router-outlet>

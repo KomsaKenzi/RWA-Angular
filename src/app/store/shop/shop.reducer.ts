@@ -14,33 +14,26 @@ export const shopInitialState = adapter.getInitialState({
 });
 
 const _shopReducer = createReducer(
-    shopInitialState,
+  shopInitialState,
 
-  on(
-    ShopActions.createShopSuccess,
-    (state: ShopState, { shop }) => {
-      bootbox.alert(`Card "${shop.card.name}" added to shop  posted!`);
-      return adapter.addOne(shop, state);
-    }
-  ),
+  on(ShopActions.createShopSuccess, (state: ShopState, { shop }) => {
+    bootbox.alert(`Card "${shop.card.name}" added to shop  posted!`);
+    return adapter.addOne(shop, state);
+  }),
 
-  on(
-    ShopActions.updateShopSuccess,
-    (state: ShopState, { shop }) => {
-      bootbox.alert('Card in shop successfully updated!');
-      return adapter.updateOne(
-        {
-          id: shop.id,
-          changes: {
-            price: shop.price,
-            text: shop.text,
-          },
+  on(ShopActions.updateShopSuccess, (state: ShopState, { shop }) => {
+    bootbox.alert('Card in shop successfully updated!');
+    return adapter.updateOne(
+      {
+        id: shop.id,
+        changes: {
+          price: shop.price,
+          text: shop.text,
         },
-        state
-      );
-    }
-  ),
-
+      },
+      state
+    );
+  }),
 
   on(ShopActions.updateShopFail, (state: ShopState) => {
     bootbox.alert(
@@ -54,13 +47,9 @@ const _shopReducer = createReducer(
   }),
 
   on(ShopActions.deleteShopFail, (state: ShopState) => {
-    bootbox.alert(
-      'An error occured while deleting card, try again later!'
-    );
+    bootbox.alert('An error occured while deleting card, try again later!');
     return state;
-  }),
-
- 
+  })
 );
 
 export const initialShopForShowState: ShopForDisplayState = {
@@ -69,17 +58,12 @@ export const initialShopForShowState: ShopForDisplayState = {
 
 const _shopForDisplayReducer = createReducer(
   initialShopForShowState,
-  on(
-    ShopActions.setShopForDisplay,
-    (state: ShopForDisplayState, { shop }) => {
-      return {
-        ...state,
-        shop: shop,
-      };
-    }
-  ),
-
-
+  on(ShopActions.setShopForDisplay, (state: ShopForDisplayState, { shop }) => {
+    return {
+      ...state,
+      shop: shop,
+    };
+  })
 );
 export function ShopForDisplayReducer(
   state: ShopForDisplayState | undefined,
@@ -88,11 +72,6 @@ export function ShopForDisplayReducer(
   return _shopForDisplayReducer(state, action);
 }
 
-
-
-export function ShopReducer(
-  state: ShopState | undefined,
-  action: Action
-) {
+export function ShopReducer(state: ShopState | undefined, action: Action) {
   return _shopReducer(state, action);
 }

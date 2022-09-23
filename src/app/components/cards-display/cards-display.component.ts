@@ -8,13 +8,11 @@ import { setCardForDisplay } from 'src/app/store/cards/cards.actions';
 @Component({
   selector: 'app-cards-display',
   templateUrl: './cards-display.component.html',
-  styleUrls: ['./cards-display.component.css']
+  styleUrls: ['./cards-display.component.css'],
 })
 export class CardsDisplayComponent implements OnInit {
   @Input() card: Card | null = null;
-  constructor(private store: Store<AppState>, private router: Router) { }
+  constructor(private store: Store<AppState>, private router: Router) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -1,0 +1,11 @@
+.dugmici{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    align-self: center;
+    background-color: beige;
+    
+}

@@ -22,20 +22,27 @@ export const selectProfiles = createSelector(
   (state) => state.profiles
 );
 
+export const selectBalance = createSelector(
+  selectUserState,
+  (state) => state.balance
+);
+
 export const selectUserData = createSelector(
   selectUsername,
   selectProfiles,
   selectID,
+  selectBalance,
   (
     username: string | null,
     profiles: profiles | null,
-    id: number | null
+    id: number | null,
+    balance: number | null
   ) => {
     return {
       username,
       profiles,
       id,
+      balance,
     };
   }
 );
-

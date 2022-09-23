@@ -1,0 +1,52 @@
+.cardsCreate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    align-self: center;
+    background-color: beige;
+}
+
+.createShop, .backButton{
+    width: 20%;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.title{
+    align-self: center;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.loginRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-self: center;
+    align-items: center;
+    align-self: center;
+    width: 80%;
+}
+
+.cardSelect{
+    width: 17%;
+}
+
+.errorMessage {
+    color:red;
+    font-weight: bold;
+    justify-self: center;
+    text-align: center;
+    align-self: center;
+    margin: 2%;
+    visibility: hidden;
+}

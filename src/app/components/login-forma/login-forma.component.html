@@ -9,7 +9,8 @@
         <input matNativeControl type="password" placeholder="Password" name="password"
             (input)="setPassword(password.value)" #password />
     </mat-form-field>
-    <label class="errorMessage" id="errorMessage">Invalid email and/or password!</label>
+
     <button mat-raised-button class="loginButton" (click)="login()" #loginButton>Log in</button>
-    <label class="signupMessage" (click)="registration()">Don't have an account? Sign up here!</label>
+    <label class="registerMessage" (click)="registration()">Don't have an account? Register here!</label>
+    <label class="errorMessage" id="errorMessage">Invalid email and/or password!</label>
 </div>

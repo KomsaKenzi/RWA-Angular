@@ -5,4 +5,5 @@ export interface UserState {
   username: string | null;
   access_token: string | null;
   profiles: profiles | null;
+  balance: number | null;
 }

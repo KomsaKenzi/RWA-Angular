@@ -1,5 +1,4 @@
 export enum profiles {
-    user = 'user',
-    admin = 'admin',
-  }
-  
+  user = 'user',
+  admin = 'admin',
+}

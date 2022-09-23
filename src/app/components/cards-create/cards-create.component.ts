@@ -8,25 +8,23 @@ import * as CardsActions from '../../store/cards/cards.actions';
 @Component({
   selector: 'app-cards-create',
   templateUrl: './cards-create.component.html',
-  styleUrls: ['./cards-create.component.css']
+  styleUrls: ['./cards-create.component.css'],
 })
 export class CardsCreateComponent implements OnInit {
-  constructor(private router: Router, private store: Store<AppState>) { }
+  constructor(private router: Router, private store: Store<AppState>) {}
   name: string = '';
   attack: number = 0;
   defence: number = 0;
   description: string = '';
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   createCard() {
-    
     const card: CardInfo = {
       name: this.name,
       attack: this.attack,
       defence: this.defence,
-      description: this.description
+      description: this.description,
     };
-    
+
     this.store.dispatch(CardsActions.createCard({ card }));
   }
 
@@ -46,7 +44,7 @@ export class CardsCreateComponent implements OnInit {
     this.description = description;
   }
 
-  backButton(){
+  backButton() {
     this.router.navigate(['cards']);
   }
 }

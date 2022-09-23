@@ -8,7 +8,6 @@ export const createCard = createAction(
   props<{ card: CardInfo }>()
 );
 
-
 export const createCardSuccess = createAction(
   'CreateCardSuccess',
   props<{ card: Card }>()
@@ -21,10 +20,7 @@ export const createCardSuccessNavigate = createAction(
 
 export const createCardFail = createAction('CreateCardFail');
 
-export const loadCard = createAction(
-  'LoadCard',
-  props<{ id: number }>()
-);
+export const loadCard = createAction('LoadCard', props<{ id: number }>());
 
 export const loadCardSuccess = createAction(
   'LoadCardSuccess',
@@ -50,11 +46,7 @@ export const updateCardSuccess = createAction(
 
 export const updateCardFail = createAction('UpdateCardFail');
 
-
-export const deleteCard = createAction(
-  'DeleteCard',
-  props<{ id: number }>()
-);
+export const deleteCard = createAction('DeleteCard', props<{ id: number }>());
 
 export const deleteCardSuccessNavigate = createAction(
   'DeleteCardSuccessNavigate',
@@ -67,4 +59,3 @@ export const deleteCardSuccess = createAction(
 );
 
 export const deleteCardFail = createAction('DeleteCardFail');
-

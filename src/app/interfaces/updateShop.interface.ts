@@ -1,6 +1,5 @@
 export interface UpdateShop {
-    id: number;
-    price: number;
-    text: string;
-  }
-  
+  id: number;
+  price: number;
+  text: string;
+}

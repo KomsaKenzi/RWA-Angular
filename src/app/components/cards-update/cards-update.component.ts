@@ -25,19 +25,18 @@ export class CardsUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.select(selectCardForDisplay).subscribe((data) => {
-
       this.card = data;
-      console.log(this.card);
+
       if (this.card) {
         this.name = this.card.name;
         this.attack = this.card.attack;
         this.defence = this.card.defence;
         this.description = this.card.description;
-        this.id=this.card.id;
+        this.id = this.card.id;
       }
     });
   }
-  
+
   updateCard() {
     const data: UpdateCards = {
       id: this.id,
@@ -46,7 +45,7 @@ export class CardsUpdateComponent implements OnInit {
       defence: this.defence,
       description: this.description,
     };
-    console.log(data);
+
     this.store.dispatch(CardsActions.updateCard({ data }));
   }
 

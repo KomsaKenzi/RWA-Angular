@@ -10,19 +10,17 @@ declare var bootbox: any;
 @Component({
   selector: 'app-register-forma',
   templateUrl: './register-forma.component.html',
-  styleUrls: ['./register-forma.component.css']
+  styleUrls: ['./register-forma.component.css'],
 })
 export class RegisterFormaComponent implements OnInit {
-
   username: string | null = null;
   password: string | null = null;
   confirmedPassword: string | null = null;
   email: string | null = null;
 
-  constructor(private router: Router, private store: Store<AppState>) { }
+  constructor(private router: Router, private store: Store<AppState>) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   setUsername(value: string) {
     this.username = value;
@@ -41,7 +39,6 @@ export class RegisterFormaComponent implements OnInit {
   }
 
   register() {
-    
     if (
       !this.username ||
       !this.password ||
@@ -77,13 +74,11 @@ export class RegisterFormaComponent implements OnInit {
       password: this.password,
       email: this.email,
     };
-    
+
     this.store.dispatch(register({ registerData }));
   }
-  
 
-  login() : void{
+  login(): void {
     this.router.navigate(['login']);
   }
-
 }

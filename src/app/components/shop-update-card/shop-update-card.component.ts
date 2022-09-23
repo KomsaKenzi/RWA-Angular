@@ -6,16 +6,17 @@ import * as ShopActions from '../../store/shop/shop.actions';
 import { Shop } from '../../models/shop.model';
 import { selectCardForDisplay } from '../../store/cards/cards.selectors';
 import { UpdateShop } from '../../interfaces/updateShop.interface';
-import { selectShopForDisplay, selectShopForDisplayState } from 'src/app/store/shop/shop.selectors';
-
+import {
+  selectShopForDisplay,
+  selectShopForDisplayState,
+} from 'src/app/store/shop/shop.selectors';
 
 @Component({
   selector: 'app-shop-update-card',
   templateUrl: './shop-update-card.component.html',
-  styleUrls: ['./shop-update-card.component.css']
+  styleUrls: ['./shop-update-card.component.css'],
 })
 export class ShopUpdateCardComponent implements OnInit {
-
   @Input() shop: Shop | null = null;
   constructor(private router: Router, private store: Store<AppState>) {}
 
@@ -29,11 +30,11 @@ export class ShopUpdateCardComponent implements OnInit {
       if (this.shop) {
         this.text = this.shop.text;
         this.price = this.shop.price;
-        this.id=this.shop.id;
+        this.id = this.shop.id;
       }
     });
   }
-  
+
   updateShop() {
     const data: UpdateShop = {
       id: this.id,

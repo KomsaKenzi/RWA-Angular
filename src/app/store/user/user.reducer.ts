@@ -11,6 +11,7 @@ export const initialUserState: UserState = {
   username: null,
   profiles: null,
   access_token: null,
+  balance: null,
 };
 
 const _userReducer = createReducer(
@@ -22,6 +23,7 @@ const _userReducer = createReducer(
       username: userData.username,
       access_token: userData.access_token,
       profiles: userData.profiles,
+      balance: userData.balance,
     };
   }),
 
@@ -31,6 +33,7 @@ const _userReducer = createReducer(
       username: userData.username,
       access_token: userData.access_token,
       profiles: userData.profiles,
+      balance: userData.balance,
     };
   }),
 
@@ -40,6 +43,7 @@ const _userReducer = createReducer(
       username: null,
       access_token: null,
       profiles: null,
+      balance: null,
     };
   }),
 
@@ -49,6 +53,7 @@ const _userReducer = createReducer(
       username: null,
       access_token: null,
       profiles: null,
+      balance: null,
     };
   })
 );
@@ -58,5 +63,3 @@ export function UserReducer(state: UserState | undefined, action: Action) {
 }
 
 const adapter: EntityAdapter<User> = createEntityAdapter<User>();
-
-

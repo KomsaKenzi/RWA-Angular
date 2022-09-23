@@ -1,8 +1,13 @@
-<mat-card>
+<mat-card class="body">
+    <div class="dugmad">
     <button mat-raised-button class="createButton" (click)="createCard()" #createutton>Create Card</button>
-    <div *ngFor="let card of showCards" >
+    <button mat-raised-button class="createButton" (click)="backButton()" #createutton>Back</button>
+    </div>
+    <div class="container">
+    <div *ngFor="let card of showCards" class="containerCard">
     <app-cards-display [card]="card"></app-cards-display>
     <button mat-raised-button class="editButton" (click)="editCard(card)" #editCButton>Edit Card</button>
     <button mat-raised-button class="deleteButton" (click)="deleteCard(card)" #deleteButton>Delete Card</button>
+    </div>
     </div>
 </mat-card>

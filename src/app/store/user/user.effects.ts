@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, exhaustMap, map, of, tap } from 'rxjs';
 import { LogedUser } from 'src/app/interfaces/logedUser.interface';
+import { UserInfo } from 'src/app/interfaces/userInfo.interface';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user-service/user.service';
 import * as UserActions from './user.actions';
@@ -121,9 +122,18 @@ export class UserEffects {
     { dispatch: false }
   );
 
-
-
- 
-
-  
+  updateBalances$ = createEffect(() =>
+    this.action$.pipe(
+      ofType(UserActions.updateBalance),
+      exhaustMap((action) =>
+        this.userService.updateBalance(action.data).pipe(
+          map((user: UserInfo) => {
+            this.router.navigate(['home']);
+            return UserActions.updateBalanceSuccess({ user });
+          })
+        )
+      ),
+      catchError(() => of(UserActions.updateBalanceFail()))
+    )
+  );
 }

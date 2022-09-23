@@ -5,7 +5,6 @@ import { AppState } from 'src/app/store/app.state';
 import { LoginData } from 'src/app/interfaces/loginData.interface';
 import * as UserActions from '../../store/user/user.actions';
 
-
 @Component({
   selector: 'app-login-forma',
   templateUrl: './login-forma.component.html',
@@ -31,7 +30,7 @@ export class LoginFormaComponent implements OnInit {
     this.store.dispatch(UserActions.login({ userData }));
   }
 
-  registration(): void{
+  registration(): void {
     this.router.navigate(['register']);
   }
 

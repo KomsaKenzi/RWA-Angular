@@ -1,0 +1,24 @@
+<div class="cardsCreate">
+<mat-form-field class="loginRow">
+    <input matNativeControl type="text" placeholder="Name" name="name"
+        (input)="setName(name.value)" #name />
+</mat-form-field>
+<select mat-form-field id="card1" class="loginRow" #card1
+(change)="setCard1(card1.options[card1.selectedIndex].value)">
+<option value="none" selected disabled hidden>Select a card</option>
+<option *ngFor="let card of notSelectedCards1" value="{{card.id}}">{{card.card.name}}</option>
+</select>
+<select mat-form-field id="card2" class="loginRow" #card2
+(change)="setCard2(card2.options[card2.selectedIndex].value)">
+<option value="none" selected disabled hidden>Select a card</option>
+<option *ngFor="let card of notSelectedCards2" value="{{card.id}}">{{card.card.name}}</option>
+</select>
+<select mat-form-field id="card3" class="loginRow" #card3
+(change)="setCard3(card3.options[card3.selectedIndex].value)">
+<option value="none" selected disabled hidden>Select a card</option>
+<option *ngFor="let card of notSelectedCards3" value="{{card.id}}">{{card.card.name}}</option>
+</select>
+
+<button mat-raised-button class="editButton" (click)="save()" #editCButton>Save</button>
+<button mat-raised-button class="deleteButton" (click)="discard()" #deleteButton>Discard</button>
+</div>

@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './store/user/user.effects';
 import { CardsEffects } from './store/cards/cards.effects';
+import { ShopEffects } from './store/shop/shop.effects';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './guards/interceptor';
 import { MenuComponent } from './components/menu/menu.component';
@@ -31,6 +32,10 @@ import { CardsCreateComponent } from './components/cards-create/cards-create.com
 import { CardsComponent } from './components/cards/cards.component';
 import { CardsDisplayComponent } from './components/cards-display/cards-display.component';
 import { CardsUpdateComponent } from './components/cards-update/cards-update.component';
+import { ShopAddCardComponent } from './components/shop-add-card/shop-add-card.component';
+import { ShopUpdateCardComponent } from './components/shop-update-card/shop-update-card.component';
+import { CreateDeckComponent } from './components/create-deck/create-deck.component';
+import { DeckEffects } from './store/deck/deck.effects';
 
 
 @NgModule({
@@ -46,7 +51,10 @@ import { CardsUpdateComponent } from './components/cards-update/cards-update.com
     CardsCreateComponent,
     CardsComponent,
     CardsDisplayComponent,
-    CardsUpdateComponent
+    CardsUpdateComponent,
+    ShopAddCardComponent,
+    ShopUpdateCardComponent,
+    CreateDeckComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +64,7 @@ import { CardsUpdateComponent } from './components/cards-update/cards-update.com
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
-    EffectsModule.forRoot([UserEffects, CardsEffects]) ,
+    EffectsModule.forRoot([UserEffects, CardsEffects, ShopEffects, DeckEffects]) ,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,

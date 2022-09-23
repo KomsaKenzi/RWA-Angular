@@ -21,9 +21,7 @@ export class CardsEffects {
       ofType(CardsActions.createCard),
       exhaustMap((action) =>
         this.cardService.createCards(action.card).pipe(
-          map((card: Card) =>
-            CardsActions.createCardSuccessNavigate({ card })
-          ),
+          map((card: Card) => CardsActions.createCardSuccessNavigate({ card })),
           catchError(() => of(CardsActions.createCardFail()))
         )
       )
@@ -42,18 +40,14 @@ export class CardsEffects {
       ),
     { dispatch: false }
   );
-  
+
   loadCards$ = createEffect(() =>
     this.action$.pipe(
       ofType(CardsActions.loadCard),
       exhaustMap(() =>
         this.cardService
           .getCards()
-          .pipe(
-            map((card: Card[]) =>
-              CardsActions.loadCardSuccess({ card })
-            )
-          )
+          .pipe(map((card: Card[]) => CardsActions.loadCardSuccess({ card })))
       ),
       catchError(() => of(CardsActions.loadCardFail()))
     )
@@ -82,9 +76,7 @@ export class CardsEffects {
         return this.cardService
           .deleteCards(action.id)
           .pipe(
-            map((res: Card) =>
-              CardsActions.deleteCardSuccessNavigate({ id })
-            )
+            map((res: Card) => CardsActions.deleteCardSuccessNavigate({ id }))
           );
       }),
       catchError(() => of(CardsActions.deleteCardFail()))
@@ -103,7 +95,4 @@ export class CardsEffects {
       ),
     { dispatch: false }
   );
-
-  
-
 }

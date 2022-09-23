@@ -1,5 +1,5 @@
 <div class="cardsCreate">
-    <label class="title">update card</label>
+    <label class="title">Update card</label>
     <mat-form-field class="loginRow">
         <input matNativeControl type="text" value="{{card?.name}}" name="name" #name
             (input)="setName(name.value)" />
@@ -18,5 +18,5 @@
     </mat-form-field>
     <label class="errorMessage" id="errorMessage">Invalid email and/or password!</label>
     <button mat-raised-button class="createCardButton" (click)="updateCard()" #loginButton>Update card</button>
-    <button mat-raised-button class="backButton" (click)="backButton()">See all cards</button>
+    <button mat-raised-button class="backButton" (click)="backButton()">Back to all cards</button>
 </div>

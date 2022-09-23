@@ -1,4 +1,6 @@
 import { createAction, props } from '@ngrx/store';
+import { UpdateBalance } from 'src/app/interfaces/updateBalance.interface';
+import { UserInfo } from 'src/app/interfaces/userInfo.interface';
 import { User } from 'src/app/models/user.model';
 import { LogedUser } from '../../interfaces/logedUser.interface';
 import { LoginData } from '../../interfaces/loginData.interface';
@@ -33,3 +35,15 @@ export const loginWithTokenSuccess = createAction(
   'LoginWithTokenSuccess',
   props<{ userData: LogedUser }>()
 );
+
+export const updateBalance = createAction(
+  'UpdateBalance',
+  props<{ data: UpdateBalance }>()
+);
+
+export const updateBalanceSuccess = createAction(
+  'UpdateBalanceSuccess',
+  props<{ user: UserInfo }>()
+);
+
+export const updateBalanceFail = createAction('UpdateBalanceFail');

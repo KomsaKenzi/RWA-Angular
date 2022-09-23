@@ -2,12 +2,13 @@ import { createAction, props } from '@ngrx/store';
 import { Shop } from 'src/app/models/shop.model';
 import { UpdateShop } from '../../interfaces/updateShop.interface';
 import { ShopInfo } from '../../interfaces/shopInfo.interface';
+import { OwnedCard } from 'src/app/models/ownedCard.model';
+import { BuyCard } from 'src/app/interfaces/buyCard.interface';
 
 export const createShop = createAction(
   'CreateShop',
   props<{ shop: ShopInfo }>()
 );
-
 
 export const createShopSuccess = createAction(
   'CreateShopSuccess',
@@ -33,11 +34,7 @@ export const updateShopSuccess = createAction(
 
 export const updateShopFail = createAction('UpdateShopFail');
 
-
-export const deleteShop = createAction(
-  'DeleteShop',
-  props<{ id: number }>()
-);
+export const deleteShop = createAction('DeleteShop', props<{ id: number }>());
 
 export const deleteShopSuccessNavigate = createAction(
   'DeleteShopSuccessNavigate',
@@ -55,3 +52,17 @@ export const setShopForDisplay = createAction(
   'SetShopForDisplay',
   props<{ shop: Shop }>()
 );
+
+export const buyCard = createAction('BuyCard', props<{ buyCard: BuyCard }>());
+
+export const buyCardSuccess = createAction(
+  'BuyCardSuccess',
+  props<{ ownedCard: OwnedCard }>()
+);
+
+export const buyCardSuccessNavigate = createAction(
+  'BuyCardSuccessNavigate',
+  props<{ ownedCard: OwnedCard }>()
+);
+
+export const buyCardFail = createAction('BuyCardFail');

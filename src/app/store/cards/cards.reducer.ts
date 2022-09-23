@@ -16,32 +16,25 @@ export const cardsInitialState = adapter.getInitialState({
 const _cardsReducer = createReducer(
   cardsInitialState,
 
-  on(
-    CardsActions.createCardSuccess,
-    (state: CardsState, { card }) => {
-      bootbox.alert(`Card "${card.name}" posted!`);
-      return adapter.addOne(card, state);
-    }
-  ),
-  on(
-    CardsActions.updateCardSuccess,
-    (state: CardsState, { card }) => {
-      bootbox.alert('Card successfully updated!');
-      return adapter.updateOne(
-        {
-          id: card.id,
-          changes: {
-            name: card.name,
-            attack: card.attack,
-            defence: card.defence,
-            description: card.description,
-          },
+  on(CardsActions.createCardSuccess, (state: CardsState, { card }) => {
+    bootbox.alert(`Card "${card.name}" posted!`);
+    return adapter.addOne(card, state);
+  }),
+  on(CardsActions.updateCardSuccess, (state: CardsState, { card }) => {
+    bootbox.alert('Card successfully updated!');
+    return adapter.updateOne(
+      {
+        id: card.id,
+        changes: {
+          name: card.name,
+          attack: card.attack,
+          defence: card.defence,
+          description: card.description,
         },
-        state
-      );
-    }
-  ),
-
+      },
+      state
+    );
+  }),
 
   on(CardsActions.updateCardFail, (state: CardsState) => {
     bootbox.alert(
@@ -55,13 +48,9 @@ const _cardsReducer = createReducer(
   }),
 
   on(CardsActions.deleteCardFail, (state: CardsState) => {
-    bootbox.alert(
-      'An error occured while deleting card, try again later!'
-    );
+    bootbox.alert('An error occured while deleting card, try again later!');
     return state;
-  }),
-
- 
+  })
 );
 
 export const initialCardForShowState: CardForDisplayState = {
@@ -70,17 +59,12 @@ export const initialCardForShowState: CardForDisplayState = {
 
 const _cardsForDisplayReducer = createReducer(
   initialCardForShowState,
-  on(
-    CardsActions.setCardForDisplay,
-    (state: CardForDisplayState, { card }) => {
-      return {
-        ...state,
-        card: card,
-      };
-    }
-  ),
-
-
+  on(CardsActions.setCardForDisplay, (state: CardForDisplayState, { card }) => {
+    return {
+      ...state,
+      card: card,
+    };
+  })
 );
 export function CardForDisplayReducer(
   state: CardForDisplayState | undefined,
@@ -89,11 +73,6 @@ export function CardForDisplayReducer(
   return _cardsForDisplayReducer(state, action);
 }
 
-
-
-export function CardsReducer(
-  state: CardsState | undefined,
-  action: Action
-) {
+export function CardsReducer(state: CardsState | undefined, action: Action) {
   return _cardsReducer(state, action);
 }

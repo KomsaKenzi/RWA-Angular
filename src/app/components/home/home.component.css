@@ -1,0 +1,38 @@
+.homePage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.menuButton{
+    border: 1px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    margin-bottom: 1px;
+}
+
+.menuButtonShop {
+    height: 186px;
+    background-image: url("../../../assets/button-shop.jpg");
+    font-size: 50px;
+    font-weight: bold;
+    
+  }
+
+  .menuButtonDeck {
+    height: 186px;
+    background-image: url("../../../assets/button-deck.jpg");
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .menuButtonBattle {
+    height: 186px;
+    background-image: url("../../../assets/button-battle.jpg");
+    font-size: 50px;
+    font-weight: bold;
+  }

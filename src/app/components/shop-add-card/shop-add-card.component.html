@@ -8,7 +8,7 @@
         <input matNativeControl type="text" placeholder="Text" name="text"
             (input)="setText(text.value)" #text />
     </mat-form-field>
-    <div class="cardDiv">
+    <div class="loginRow">
         <select mat-form-field id="card" class="cardSelect" #card
             (change)="setCard(card.options[card.selectedIndex].value)">
             <option value="none" selected disabled hidden>Select a card</option>
@@ -16,6 +16,6 @@
         </select>
     </div>
     <label class="errorMessage" id="errorMessage">Invalid email and/or password!</label>
-    <button mat-raised-button class="createShop" (click)="createShopCard()" #loginButton>Add card</button>
+    <button mat-raised-button class="createShop" (click)="createShopCard()" #loginButton>Add card to shop</button>
     <button mat-raised-button class="backButton" (click)="backButton()">See shop</button>
 </div>

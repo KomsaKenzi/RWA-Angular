@@ -3,10 +3,9 @@ import { CardsState } from 'src/app/state/cardsState.state';
 import { Card } from 'src/app/models/card.model';
 import { CardForDisplayState } from 'src/app/state/cardForDisplayState.state';
 
-export const selectCardsState =
-  createFeatureSelector<CardsState>('cardsState');
+export const selectCardsState = createFeatureSelector<CardsState>('cardsState');
 
-  export const selectCardsForDisplayState =
+export const selectCardsForDisplayState =
   createFeatureSelector<CardForDisplayState>('cardForDisplay');
 
 export const selectCards = createSelector(

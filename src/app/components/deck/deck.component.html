@@ -1,1 +1,21 @@
-<p>deck works!</p>
+<div class="main">
+<mat-card class="main">
+    <div class="dugmad">
+    <button mat-raised-button class="createDeckButton" (click)="createDeck()" #createDeckButton>Create deck</button>
+    <button mat-raised-button class="backButton" (click)="backButton()" #createutton>Back</button>
+    </div>
+    <div class="container">
+    <div *ngFor="let card of showCards"  class="containerCard">
+    <app-cards-display [card]="card.card"></app-cards-display>
+    <button mat-raised-button class="editButton" (click)="levelCard(card)" #editCButton>Level up</button>
+    <button mat-raised-button class="deleteButton" (click)="sellCard(card)" #deleteButton>Sell Card</button>
+    </div>
+</div>
+</mat-card>
+<div class="containerDeck main">
+<div *ngFor="let deck of decks" class="containerCard main">
+    <label>Deck {{deck.name}}</label>
+    <button mat-raised-button class="deleteButton" (click)="deleteDeck(deck.id)" #deleteButton>Delete deck</button>
+</div>
+</div>
+</div>

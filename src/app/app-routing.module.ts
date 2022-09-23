@@ -9,18 +9,26 @@ import { BattleComponent } from './components/battle/battle.component';
 import { CardsCreateComponent } from './components/cards-create/cards-create.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { CardsUpdateComponent } from './components/cards-update/cards-update.component';
+import { ShopAddCardComponent } from './components/shop-add-card/shop-add-card.component';
+import { ShopUpdateCardComponent } from './components/shop-update-card/shop-update-card.component';
+import { CreateDeckComponent } from './components/create-deck/create-deck.component';
+import { AdminGuard } from './guards/admin.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormaComponent },
   { path: '', component: LoginFormaComponent },
   { path: 'register', component: RegisterFormaComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'shop', component: ShopComponent },
-  { path: 'deck', component: DeckComponent },
-  { path: 'battle', component: BattleComponent },
-  { path: 'createCard', component: CardsCreateComponent },
-  { path: 'cards', component: CardsComponent },
-  { path: 'updateCard', component: CardsUpdateComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'shop', component: ShopComponent, canActivate: [AuthGuard] },
+  { path: 'shopAddCard', component: ShopAddCardComponent, canActivate: [AdminGuard] },
+  { path: 'shopUpdateCard', component: ShopUpdateCardComponent, canActivate: [AdminGuard] },
+  { path: 'deck', component: DeckComponent, canActivate: [AuthGuard] },
+  { path: 'battle', component: BattleComponent, canActivate: [AuthGuard] },
+  { path: 'createCard', component: CardsCreateComponent, canActivate: [AdminGuard] },
+  { path: 'cards', component: CardsComponent, canActivate: [AdminGuard] },
+  { path: 'updateCard', component: CardsUpdateComponent, canActivate: [AdminGuard] },
+  { path: 'createDeck', component: CreateDeckComponent, canActivate: [AuthGuard] },
 
 ];
 

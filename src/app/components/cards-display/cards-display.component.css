@@ -1,0 +1,19 @@
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    align-self: center;
+    background-color: beige;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-self: center;
+    align-items: center;
+    align-self: center;
+    width: 50%;
+}

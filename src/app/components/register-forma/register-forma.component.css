@@ -1,0 +1,55 @@
+.errorMessage {
+    color:red;
+    font-weight: bold;
+    justify-self: center;
+    text-align: center;
+    align-self: center;
+    margin: 2%;
+    visibility: hidden;
+}
+
+.title{
+    align-self: center;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.registerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    align-self: center;
+    background-color: beige;
+}
+
+.form{
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.registerButton {
+    width: 20%;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+.registerMessage{
+    margin-top: 10px;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+.registerMessage:hover {
+    text-shadow: 2px 2px 10px #000000;
+}

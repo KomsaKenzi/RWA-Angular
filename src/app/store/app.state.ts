@@ -1,13 +1,13 @@
 import { LogedUser } from '../interfaces/logedUser.interface';
 import { UserReducer } from './user/user.reducer';
-import { CardsReducer, CardForDisplayReducer} from './cards/cards.reducer';
+import { CardsReducer, CardForDisplayReducer } from './cards/cards.reducer';
 import { CardForDisplayState } from '../state/cardForDisplayState.state';
 import { ShopForDisplayState } from '../state/shopForDisplayState.state';
 import { CardsState } from 'src/app/state/cardsState.state';
 import { ShopState } from 'src/app/state/shopState.state';
 import { ShopReducer, ShopForDisplayReducer } from './shop/shop.reducer';
-
-
+import { DeckState } from '../state/deckState.state';
+import { DecksReducer } from './deck/deck.reducer';
 
 export interface AppState {
   auth: LogedUser;
@@ -15,6 +15,7 @@ export interface AppState {
   shopForDisplay: ShopForDisplayState;
   cardsState: CardsState;
   shopState: ShopState;
+  deckState: DeckState;
 }
 
 export const Reducers = {
@@ -23,4 +24,5 @@ export const Reducers = {
   cardForDisplay: CardForDisplayReducer,
   shopState: ShopReducer,
   shopForDisplay: ShopForDisplayReducer,
+  deckState: DecksReducer,
 };
